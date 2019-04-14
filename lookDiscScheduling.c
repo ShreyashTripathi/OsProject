@@ -1,6 +1,7 @@
 #include<unistd.h>
 #include<math.h>
 #include<stdlib.h>
+#include<stdio.h>
 int main()
 {
   int cur,n,reqArr[50];
@@ -86,15 +87,13 @@ int main()
     } 
   }
   int mov = 0;
-  mov = (cur - arr[0]);
-  printf("%d -- > %d",cur,arr[0]);
-  printf("\n");
-  for(int i=1;i<z;i++)
-  {
-     mov = mov + abs(arr[i] - arr[i-1]);
-     printf("%d -- > %d",arr[i-1],arr[i]);
-     printf("\n");
-  }
-  printf("Total distance covered by disk arm: %d",mov);
+  mov = abs(cur - arr[0]);
+  printf("%d --> %d",cur,arr[0]);
+    for(int i=1;i<z;i++)
+    {
+        mov=mov+abs(arr[i]-arr[i-1]);
+        printf(" --> %d",arr[i]);
+    }
+  printf("\nTotal distance covered by disk arm: %d",mov);
 
 }
